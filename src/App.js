@@ -5,9 +5,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div style={{marginBottom: "20px"}} >Problem 1</div>
+      <div className="App__problem-label" >Problem 1</div>
       <CountdownComponentParent />
-      <div style={{marginTop: "20px"}}>Problem 2</div>
+      <div className="App__problem-label">Problem 2</div>
       <FetchingComponent />
     </div>
   );

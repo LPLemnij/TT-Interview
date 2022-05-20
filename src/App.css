@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.App__problem-label {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

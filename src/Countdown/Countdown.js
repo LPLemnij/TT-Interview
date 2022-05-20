@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react'
 
-// The following is a piece of code that someone has given you for code review.
-// There are a few glaring mistakes as well as some more nuanced issues. As we
-// read over the code and talk about it together, your job is to identify the React
-// bugs and antipatterns and express your thought processes as to how you would go 
-// about fixing them. Think about what the code is doing right now, how it should
-// work if done properly, and how to fix it. As we go along, implement the solutions live.
+// A developer on our team was tasked to create a view that keeps track of a count variable,
+// displays a count x count square, and allows the user to click a button to decrement the count.
+// He was told that the view should also implement the following features:
+// 1. It should tell the user what the current area of the box is
+// 2. It should allow the user to click a button which decrements the count and makes the box appear 
+// smaller. 
+// 3. It should allow the user should also to change the background color of the box by typing a 
+// new color in an <input>
+// 4. It should be written such that, when the userID changes, the input should reset to "red" and the count 
+// to "50" no matter the current state.
+// Our teammate has attempted to implement these features and handed us the below code to review. During
+// the next 20 minutes, read the code and analyze/discuss the React mistakes/antipatterns your teammate
+// has made and how we should fix them. You may use any internet resources as well as ask questions and
+// change the code itself to see how it behaves.
 
 function CountdownComponentParent () {
     const [renderNum, setRenderNum] = useState(0)
