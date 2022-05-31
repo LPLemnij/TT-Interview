@@ -1,8 +1,8 @@
-// This excercise is meant for you to showcase what you can do from a programming perspective and how well you can interact with apis, etc. 
-// What you have to do is make a button that fetches data from 'https://jsonplaceholder.typicode.com/posts' when clicked and displays the 
-// first word of the title and the first word of the body in a scrollable table. No need to worry about making it look good too much, 
+// This excercise is meant for you to showcase what you can do from a programming perspective and how well you can interact with apis, etc.
+// What you have to do is make a button that fetches data from 'https://jsonplaceholder.typicode.com/posts' when clicked and displays the
+// first word of the title and the first word of the body in a scrollable table. No need to worry about making it look good too much,
 // this is not a styling interview.
-//  
+//
 // Partial example of json response from above link: [
 //   {
 //     "userId": 1,
@@ -19,7 +19,32 @@
 // ]
 
 function Fetching() {
-    return <div>Table Goes Here</div>
+  return <div>Table Goes Here</div>
 }
 
 export default Fetching
+
+// function Fetching() {
+//     const [firstWordTitle, setFirstWordTitle] = useState([])
+//     const [firstWordBody, setFirstWordBody] = useState([])
+
+//     let data = fetch('https://jsonplaceholder.typicode.com/posts').then((data) =>
+//       data.json().then((data) => console.log(data))
+//     )
+
+//     const getFirstWord = (data) => {
+//       for (let i = 0; i < data.length; i++) {
+//         let bodyArr = []
+//         let titleArr = []
+//         bodyArr.push(data[i].body.split(' '))
+//       }
+//     }
+
+//     useEffect(() => {
+//       getFirstWord(data)
+//     }, [])
+
+//     return <div>Table Goes Here</div>
+//   }
+
+//   export default Fetching
