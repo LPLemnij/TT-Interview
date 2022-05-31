@@ -24,17 +24,17 @@ function CountdownComponentParent () {
     setInterval(() => {setRenderNum(Math.random())}, 2000)
     
     const CountdownComponent = (props) => {
-        const [count, setCount] = useState(props.count)
-        const [square, setSquare] = useState(props.count * props.count) 
+        const [sideLength, setSideLength] = useState(props.sideLength)
+        const [square, setSquare] = useState(props.sideLength * props.sideLength) 
         const [boxColorEditable, setBoxColorEditable] = useState(props.boxColor)
     
         useEffect(() => {
             setBoxColorEditable(props.boxColor)
         }, [props])
     
-        const decrementCount = () => {
-            setCount(count - 1)
-            setSquare(count * count)
+        const decrementSideLength = () => {
+            setSideLength(sideLength - 1)
+            setSquare(sideLength * sideLength)
         }
     
         const handleColorChange = (e) => {
@@ -43,9 +43,9 @@ function CountdownComponentParent () {
     
         return (
             <div>
-                <button onClick={decrementCount}>Decrement Count</button>
+                <button onClick={decrementSideLength}>Decrease Side Length by One</button>
                 <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
-                    <div style={{backgroundColor: boxColorEditable, height: count, width: count, borderStyle: "solid"}} />
+                    <div style={{backgroundColor: boxColorEditable, height: sideLength, width: sideLength, borderStyle: "solid"}} />
                 </div>
                 <div>The area of the box is {square} pixels.</div>
                 <label>Set Box Color</label>
@@ -55,7 +55,7 @@ function CountdownComponentParent () {
         )
     }
 
-    return <CountdownComponent count={50} boxColor={"red"} userId={userId}/>
+    return <CountdownComponent sideLength={50} boxColor={"red"} userId={userId}/>
 }
 
 export default CountdownComponentParent
