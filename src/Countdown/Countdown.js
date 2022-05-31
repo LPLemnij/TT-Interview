@@ -88,3 +88,77 @@ function CountdownComponentParent() {
 }
 
 export default CountdownComponentParent
+
+// const CountdownComponent = (props) => {
+//     useEffect(() => {
+//       props.setBoxColorEditable(props.boxColor)
+//     }, [props])
+
+//     return (
+//       <div>
+//         <button onClick={props.decrementSideLength}>
+//           Decrease Side Length by One
+//         </button>
+//         <div
+//           style={{
+//             display: 'flex',
+//             alignItems: 'center',
+//             justifyContent: 'center'
+//           }}
+//         >
+//           <div
+//             style={{
+//               backgroundColor: props.boxColorEditable,
+//               height: props.sideLength,
+//               width: props.sideLength,
+//               borderStyle: 'solid'
+//             }}
+//           />
+//         </div>
+//         <div>The area of the box is {props.square} pixels.</div>
+//         <label>Set Box Color</label>
+//         <input
+//           value={props.boxColorEditable}
+//           onChange={props.handleColorChange}
+//         ></input>
+//         <div>This operation is run by {props.userId}</div>
+//       </div>
+//     )
+//   }
+
+//   function CountdownComponentParent() {
+//     const [renderNum, setRenderNum] = useState(0)
+//     const [userId, setUserId] = useState('Luca')
+//     const [sideLength, setSideLength] = useState(50)
+//     const [square, setSquare] = useState(sideLength * sideLength)
+//     const [boxColorEditable, setBoxColorEditable] = useState('red')
+
+//     // This simulates a rerender of the parent component. In a normal app this can happen
+//     // for many reasons.
+//     setInterval(() => {
+//       setRenderNum(Math.random())
+//     }, 2000)
+
+//     const decrementSideLength = () => {
+//       setSideLength(sideLength - 1)
+//       setSquare(sideLength * sideLength)
+//     }
+
+//     const handleColorChange = (e) => {
+//       setBoxColorEditable(e.target.value)
+//     }
+
+//     return (
+//       <CountdownComponent
+//         sideLength={sideLength}
+//         boxColor={boxColorEditable}
+//         userId={userId}
+//         decrementSideLength={decrementSideLength}
+//         setBoxColorEditable={setBoxColorEditable}
+//         handleColorChange={handleColorChange}
+//         square={square}
+//       />
+//     )
+//   }
+
+//   export default CountdownComponentParent
