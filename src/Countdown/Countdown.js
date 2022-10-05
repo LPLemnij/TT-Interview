@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 // 1. It should tell the user what the current area of the box is
 // 2. It should allow the user to click a button which decrements the count and makes the box appear 
 // smaller. 
-// 3. It should allow the user should also to change the background color of the box by typing a 
+// 3. It should allow the user to change the background color of the box by typing a 
 // new color in an <input>
 // 4. It should be written such that, when the userID changes, the input should reset to "red" and the count 
 // to "50" no matter the current state.
@@ -16,11 +16,12 @@ import { useState, useEffect } from 'react'
 // change the code itself to see how it behaves.
 
 function CountdownComponentParent () {
+    // You may not delete anything in this component
     const [renderNum, setRenderNum] = useState(0)
     const [userId, setUserId] = useState("Luca")
 
     // This simulates a rerender of the parent component. In a normal app this can happen
-    // for many reasons.
+    // for many reasons. 
     setInterval(() => {setRenderNum(Math.random())}, 2000)
     
     const CountdownComponent = (props) => {
